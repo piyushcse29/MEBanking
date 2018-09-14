@@ -17,6 +17,14 @@ public class AccountBalance {
 	@Column(name = "account_balance")
 	int balance;
 
+	public AccountBalance(int accountId, String customerId, String accountName, int balance) {
+		super();
+		this.accountId = accountId;
+		this.customerId = customerId;
+		this.accountName = accountName;
+		this.balance = balance;
+	}
+
 	public int getAccountId() {
 		return accountId;
 	}
@@ -48,4 +56,11 @@ public class AccountBalance {
 	public void setBalance(int balance) {
 		this.balance = balance;
 	}
+
+	@Override
+	public String toString() {
+		return "AccountBalance [accountId=" + accountId + ", customerId=" + customerId + ", accountName=" + accountName
+				+ ", balance=" + balance + "]";
+	}
+
 }

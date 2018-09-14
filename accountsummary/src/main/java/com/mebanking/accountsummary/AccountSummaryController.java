@@ -1,5 +1,7 @@
 package com.mebanking.accountsummary;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccountSummaryController {
 
 	@Autowired
-	AccountBalance accountBalance;
+	private AccountSummaryRepository accountSummaryRepository;
 
 	@GetMapping("/accountbalance")
-	AccountBalance getBalances() {
-		return accountBalance;
+	List<AccountBalance> getBalances() {
+		return accountSummaryRepository.findAll();
 
 	}
 }
