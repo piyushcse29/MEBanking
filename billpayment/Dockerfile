@@ -1,4 +1,6 @@
-FROM openjdk:8
-ADD target/Billpayment.jar BillPayment.jar
-EXPOSE 9003
-ENTRYPOINT ["java","-jar","Billpayment.jar"]  
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ARG JAR_FILE
+COPY ${JAR_FILE} Billpayment.jar
+EXPOSE 9001
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/Billpayment.jar"]
