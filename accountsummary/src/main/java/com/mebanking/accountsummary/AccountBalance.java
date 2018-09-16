@@ -15,7 +15,7 @@ public class AccountBalance {
 	@Column(name = "account_name")
 	String accountName;
 	@Column(name = "account_balance")
-	int balance;
+	float balance;
 
 	public AccountBalance(int accountId, String customerId, String accountName, int balance) {
 		super();
@@ -49,11 +49,11 @@ public class AccountBalance {
 		this.accountName = accountName;
 	}
 
-	public int getBalance() {
+	public float getBalance() {
 		return balance;
 	}
 
-	public void setBalance(int balance) {
+	public void setBalance(float balance) {
 		this.balance = balance;
 	}
 

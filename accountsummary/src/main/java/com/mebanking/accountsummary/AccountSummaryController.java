@@ -15,6 +15,5 @@ public class AccountSummaryController {
 	@GetMapping("/accountbalance")
 	List<AccountBalance> getBalances() {
 		return accountSummaryRepository.findAll();
-
 	}
 }
