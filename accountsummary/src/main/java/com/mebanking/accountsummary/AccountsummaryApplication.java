@@ -21,7 +21,7 @@ public class AccountsummaryApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		accountSummaryRepository.save(new AccountBalance(12345, "piyushcse29", "Piyush Mittal", 11111));
+		accountSummaryRepository.save(new AccountBalance(12345, "piyushcse29", "Piyush Mittal", 11111.1f));
 
 		for (final AccountBalance accBal : accountSummaryRepository.findAll()) {
 			logger.info("The account balance is " + accBal.toString());
